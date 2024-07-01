@@ -1,0 +1,135 @@
+<!-- ST Breadcumb Area -->
+<div class="st-breadcumb-area pt-150" style="background: url(assets/images/breadcumb/breadcumb.jpg) no-repeat;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="breadcumb__top__content text-center wow fadeInUpBig">
+					<h2> About Us </h2>
+				</div>
+				<div class="breadcumb__links">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#"> / </a></li>
+						<li><a href="#">About Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ST About Area -->
+<div class="st-about-area style2 pt-100 pb-100">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6">
+				<div class="st__about__thumb wow fadeInUp">
+					<img src="assets/images/about/about2.png" alt="">
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="st__about__wrap">
+					<div class="st__section__title wow fadeInUp">
+						<h5> About The Company </h5>
+						<h1>Global logistics Solution 
+							Provider </h1>
+							<p>Payment solutions enable businesses to accept payments Payment stions enable businesses to 
+								accept payments from ctly customers ctly securely. stions enable businesses 
+								to accept payments from ctly customers ctly securely.</p>
+					</div>
+					<div class="st__about__content wow fadeInUp">
+						<div class="st__about__list__box mt-35">
+							<div class="row">
+								<div class="col-md-6">
+									<ul class="about__list">
+										<li>Worldwide Services</li>
+										<li>Local Service</li>
+									</ul>
+								</div>								
+								<div class="col-md-6">
+									<ul class="about__list">
+										<li>Tracking Moving</li>
+										<li>Due Time Delivery</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="st__about__right">
+							<div class="st__about__video__box">
+								<a class="video-vemo-icon st__about__video venobox vbox-item" data-vbtype="youtube" data-autoplay="true" href="https://www.youtube.com/watch?v=N7L5wlPxZ1o">
+									<i class="bi bi-play"></i>
+								</a>
+								<span>Watch The Video</span>
+							</div>
+							<div class="st__about__btn">
+								<a class="st__btn2" href="#"> More Details <i class="bi bi-arrow-right"></i> </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ST Service Area -->
+<div class="st-service-area pt-100 pb-80">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="st__section__title mb-50 text-center wow fadeInUp">
+					<h5> Types of Loglstice </h5>
+					<span class="circle"></span>
+					<h1>Popular Logistics Services</h1>
+				</div>
+			</div>
+            <% if(ServiceData){%>
+                <% for (let i = 0; i < ServiceData.length; i++) { %>
+                    <% let item = ServiceData[i]; %>
+			<div class="col-lg-4 col-md-6">
+				<div class="st__service__box wow fadeInUp p-relative">
+					<div class="st__service__thumb">
+						<img src="<%=item.image%>" alt="">
+						<div class="st__service__icon">
+							<img src="assets/images/service/icon1.png" alt="">
+						</div>
+					</div>
+					<div class="st__service__content">
+						<span>  </span>
+						<h2> <a href="/service"> <%=item.name%> </a> </h2>
+						<div class="st__service__btn">
+							<a href="/service"> <i class="bi bi-arrow-right"></i> </a>
+						</div>
+					</div>
+				</div>
+			</div>			
+            <% } %>
+            <% } %>
+		</div>
+	</div>
+</div>
+
+<!-- ST Appointment Area -->
+<div class="st-appointment-area style2 pt-100 p-relative" style="background: url(assets/images/appointment/bg.jpg);background-repeat: no-repeat;background-position: center center;background-size: cover;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9">
+				<div class="st__section__title mb-50 wow fadeInUp">
+					<h5 class="text-white"> Booking Appointment </h5>
+					<h1 class="text-white">24/7 customer support any time <br> of the day or night</h1>
+					<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+					<a class="st__btn2" href="#"> More Details <i class="bi bi-arrow-right"></i> </a>
+					<a class="st__btn" href="#"> More Details <i class="bi bi-arrow-right"></i> </a>
+				</div>
+			</div>
+			<div class="col-lg-3"></div>
+		</div>
+	</div>
+	<div class="st__appointment__shape1 wow fadeInUp">
+		<img src="assets/images/appointment/shape2.png" alt="">
+	</div>
+	<div class="st__appointment__video wow fadeInUp">
+		<a class="video-vemo-icon st__video venobox vbox-item" data-vbtype="youtube" data-autoplay="true">
+			<i class="bi bi-play"></i>
+		</a>
+	</div>
+</div>
+<!-- ST Team Area -->

@@ -1,0 +1,58 @@
+<!-- ST Breadcumb Area -->
+<div class="st-breadcumb-area pt-150" style="background: url(assets/images/breadcumb/breadcumb.jpg) no-repeat;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="breadcumb__top__content text-center wow fadeInUpBig">
+					<!-- <span> Business Models you can Consider </span> -->
+					<h2> News & Blog </h2>
+				</div>
+				<div class="breadcumb__links">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="#"> / </a></li>
+						<li><a href="#"> News & Blog </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ST Blog Area -->
+<div class="st-blog-area style2 pt-100 pb-100">
+	<div class="container">
+		<div class="row">
+            <% if(BlogData){%>
+                <% for (let i = 0; i < BlogData.length; i++) { %>
+                    <% let item = BlogData[i]; %>
+			<div class="col-lg-4 col-md-6">
+				<div class="st__blog__single__box wow fadeInUp">
+					<div class="st__blog__thumb">
+						<img src="<%=item.image%>" alt="">
+						
+					</div>
+					<div class="st__blog__content">
+					
+						<h2><a href="#"><%=item.name%></a></h2>
+						<a class="st_blog_btn" href="#"> Read More <i class="bi bi-arrow-up-short"></i></a>
+					</div>
+				</div>
+			</div>	
+            <% } %>
+            <% } %>
+		</div>
+		<!-- <div class="row">
+			<div class="col-lg-12">
+				<div class="st__blog__pagination pt-70">
+					<ul>
+						<li><a href="#"> <i class="bi bi-chevron-double-left"></i> </a></li>
+						<li><a class="active" href="#"> 1 </a></li>
+						<li><a href="#"> 2 </a></li>
+						<li><a href="#"> 3 </a></li>
+						<li><a href="#"> <i class="bi bi-chevron-double-right"></i> </a></li>
+					</ul>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</div>
