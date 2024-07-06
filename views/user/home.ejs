@@ -34,6 +34,32 @@
 		</div>
 	</div>
 </div>
+<div class="st-appointment-areasa">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="st__contact__inner">
+					<div class="st__contact__position">
+					
+						<form action="/tracking" method="post">
+							<div class="row">
+								<div class="col-lg-12 wow fadeInUp">
+									<div class="st__form__box p-relative form-inline">
+										<input type="text" name="trackingid" placeholder="Enter Your Invoice Number" required>
+										<button class="btn btn-primary p-3 w-25">Track</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
 <!-- ST Feature Area -->
 <div class="st-feature-area pb-60">
 	<div class="container">
@@ -459,3 +485,26 @@
 		</div>
 	</div>
 </div> -->
+<style>
+.st__form__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.st__form__box input[type="text"] {
+    flex: 1;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.st__form__box .btn {
+    flex-shrink: 0;
+}
+
+</style>
+<script>
+	      var message = "<%= message %>";
+        if (message && message.trim().length > 0) {
+            window.alert(message);
+        }
+</script>

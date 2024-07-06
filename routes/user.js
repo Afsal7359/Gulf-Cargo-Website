@@ -8,5 +8,6 @@ router.get('/about',usercontroller.RenderAboutPage )
 router.get('/service',usercontroller.RenderServicePage )
 router.get('/blog',usercontroller.RenderBlogPage )
 router.get('/contact',usercontroller.RenderContactPage )
+router.post('/tracking',usercontroller.TrackingPost);
 
 module.exports = router;
