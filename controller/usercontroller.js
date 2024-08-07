@@ -45,7 +45,7 @@ module.exports={
         try {
             const trackingid = req.body.trackingid;
             console.log(trackingid, "id");
-            const response = await fetch('https://erp.gulfcargoksa.com/api/tracking', {
+            const response = await fetch('https://erp.alameencargo.com/api/tracking', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
