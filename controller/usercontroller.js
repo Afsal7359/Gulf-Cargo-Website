@@ -1,6 +1,5 @@
 const Service = require('../model/Service')
 const Blog = require('../model/Blog')
-const axios = require('axios');
 module.exports={
     RenderHomePage: async(req,res)=>{
         try {
@@ -46,21 +45,22 @@ module.exports={
         try {
             const trackingid = req.body.trackingid;
             console.log(trackingid, "id");
-    
-            // Sending trackingid as a query parameter in a GET request
-            const response = await axios.get(`https://erp.gulfcargoksa.com/api/tracking`, {
-                params: { booking_no: trackingid },
+            const response = await fetch('https://erp.gulfcargoksa.com/api/tracking', {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                body: JSON.stringify({ booking_no: trackingid })
             });
     
-            console.log(response, "ressss");
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
     
-            const responseData = response.data;
+            const responseData = await response.json();
             const data = responseData.data;
             const adress = responseData.adress;
-            console.log(data, "dddddddddda");
+            console.log(data , "dddddddddda");
     
             if (data) {
                 res.render('user/tracking', { data: JSON.stringify(data), adress: JSON.stringify(adress) });
