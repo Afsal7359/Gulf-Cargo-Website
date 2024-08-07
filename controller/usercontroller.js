@@ -1,5 +1,6 @@
 const Service = require('../model/Service')
 const Blog = require('../model/Blog')
+const axios = require('axios');
 module.exports={
     RenderHomePage: async(req,res)=>{
         try {
@@ -41,34 +42,33 @@ module.exports={
             console.log(error);
         }
     },
-    TrackingPost: async (req, res) => {
+     TrackingPost : async (req, res) => {
         try {
             const trackingid = req.body.trackingid;
             console.log(trackingid, "id");
-            const response = await fetch(`https://erp.gulfcargoksa.com/api/tracking?booking_no=${trackingid}`, {
-                method: 'POST',
+    
+            const response = await axios.post(`https://erp.gulfcargoksa.com/api/tracking`, { booking_no: trackingid }, {
                 headers: {
                     'Content-Type': 'application/json'
-                },
+                }
             });
     
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-    
-            const responseData = await response.json();
+            const responseData = response.data;
             const data = responseData.data;
             const adress = responseData.adress;
             console.log(data, "dddddddddda");
+            
             if (data) {
-                res.render('user/tracking',{ data: JSON.stringify(data) , adress: JSON.stringify(adress) }); // Pass data as JSON string
-            }else{
-                const message= "Tracking Id Not Found"
-                const ServiceData = await Service.find().sort({_id:-1}).limit(3)
-                res.render('user/home',{ServiceData,message})
+                res.render('user/tracking', { data: JSON.stringify(data), adress: JSON.stringify(adress) });
+            } else {
+                const message = "Tracking Id Not Found";
+                const ServiceData = await Service.find().sort({ _id: -1 }).limit(3);
+                res.render('user/home', { ServiceData, message });
             }
         } catch (error) {
-            console.log(error);
+            console.log(error.message);
+            // Handle error appropriately, e.g., render an error page or return an error response
+            res.status(500).send("An error occurred while fetching tracking data.");
         }
     }
 }
