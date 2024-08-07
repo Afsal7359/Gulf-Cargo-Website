@@ -45,12 +45,11 @@ module.exports={
         try {
             const trackingid = req.body.trackingid;
             console.log(trackingid, "id");
-            const response = await fetch('https://erp.gulfcargoksa.com/api/tracking', {
+            const response = await fetch(`https://erp.gulfcargoksa.com/api/tracking?booking_no=${trackingid}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ booking_no: trackingid })
             });
     
             if (!response.ok) {

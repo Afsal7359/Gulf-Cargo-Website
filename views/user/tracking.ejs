@@ -36,6 +36,7 @@
         <script>
             var datas = JSON.parse('<%- data %>');
             var address = JSON.parse('<%- adress %>');
+            console.log(datas,"Daaa");
     
             document.getElementById('invoice-number').innerHTML = `Invoice Number: ${address.invoice_number}`;
             
