@@ -42,22 +42,26 @@ module.exports={
             console.log(error);
         }
     },
-     TrackingPost : async (req, res) => {
+    TrackingPost : async (req, res) => {
         try {
             const trackingid = req.body.trackingid;
             console.log(trackingid, "id");
     
-            const response = await axios.post(`https://erp.gulfcargoksa.com/api/tracking`, { booking_no: trackingid }, {
+            // Sending trackingid as a query parameter in a GET request
+            const response = await axios.get(`https://erp.gulfcargoksa.com/api/tracking`, {
+                params: { booking_no: trackingid },
                 headers: {
                     'Content-Type': 'application/json'
                 }
             });
     
+            console.log(response, "ressss");
+    
             const responseData = response.data;
             const data = responseData.data;
             const adress = responseData.adress;
             console.log(data, "dddddddddda");
-            
+    
             if (data) {
                 res.render('user/tracking', { data: JSON.stringify(data), adress: JSON.stringify(adress) });
             } else {
