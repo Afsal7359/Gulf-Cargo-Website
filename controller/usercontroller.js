@@ -52,23 +52,24 @@ module.exports={
                 },
                 body: JSON.stringify({ booking_no: trackingid })
             });
+    console.log(response,'reeeee');
     
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
     
-            const responseData = await response.json();
-            const data = responseData.data;
-            const adress = responseData.adress;
-            console.log(data , "dddddddddda");
+            // const responseData = await response.json();
+            // const data = responseData.data;
+            // const adress = responseData.adress;
+            // console.log(data , "dddddddddda");
     
-            if (data) {
-                res.render('user/tracking', { data: JSON.stringify(data), adress: JSON.stringify(adress) });
-            } else {
-                const message = "Tracking Id Not Found";
-                const ServiceData = await Service.find().sort({ _id: -1 }).limit(3);
-                res.render('user/home', { ServiceData, message });
-            }
+            // if (data) {
+            //     res.render('user/tracking', { data: JSON.stringify(data), adress: JSON.stringify(adress) });
+            // } else {
+            //     const message = "Tracking Id Not Found";
+            //     const ServiceData = await Service.find().sort({ _id: -1 }).limit(3);
+            //     res.render('user/home', { ServiceData, message });
+            // }
         } catch (error) {
             console.log(error.message);
             // Handle error appropriately, e.g., render an error page or return an error response
