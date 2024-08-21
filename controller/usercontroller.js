@@ -45,17 +45,12 @@ module.exports={
         try {
             const trackingid = req.body.trackingid;
             console.log(trackingid, "id");
-            const https = require('https');
-            const agent = new https.Agent({
-                rejectUnauthorized: false
-            });
-            const response = await fetch('https://erp.gulfcargoksa.com/api/tracking', {
+            const response = await fetch('https://gulfcargoksa.cyenosure.co.in/api/tracking', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ booking_no: trackingid }),
-                agent
+                body: JSON.stringify({ booking_no: trackingid })
             });
     console.log(response,'reeeee');
     
