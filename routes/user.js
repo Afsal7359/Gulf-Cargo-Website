@@ -9,5 +9,6 @@ router.get('/service',usercontroller.RenderServicePage )
 router.get('/blog',usercontroller.RenderBlogPage )
 router.get('/contact',usercontroller.RenderContactPage )
 router.post('/tracking',usercontroller.TrackingPost);
+router.get('/PrivacyPolicy',usercontroller.RenderPrivacyPolicy);
 
 module.exports = router;
